@@ -13,6 +13,7 @@
 {{- end -}}
 apiVersion: {{.apiVersion}}{{"\n"}}
 {{ range .items -}}
+    KIND: {{ .kind }}
     POD: {{ .metadata.name}}
     NODE: {{.spec.nodeName}}
     PHASE: {{.status.phase}}
