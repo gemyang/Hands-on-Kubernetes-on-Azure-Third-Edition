@@ -1,0 +1,754 @@
+apiVersion: v1
+items:
+- apiVersion: v1
+  kind: Node
+  metadata:
+    annotations:
+      flannel.alpha.coreos.com/backend-data: '{"VtepMAC":"ea:c1:cf:43:99:5f"}'
+      flannel.alpha.coreos.com/backend-type: vxlan
+      flannel.alpha.coreos.com/kube-subnet-manager: "true"
+      flannel.alpha.coreos.com/public-ip: 10.129.187.73
+      kubeadm.alpha.kubernetes.io/cri-socket: /var/run/dockershim.sock
+      node.alpha.kubernetes.io/ttl: "0"
+      volumes.kubernetes.io/controller-managed-attach-detach: "true"
+    creationTimestamp: "2023-05-04T16:18:28Z"
+    labels:
+      beta.kubernetes.io/arch: amd64
+      beta.kubernetes.io/os: linux
+      kubernetes.io/arch: amd64
+      kubernetes.io/hostname: chungguangy-thornton-master1
+      kubernetes.io/os: linux
+      node-role.kubernetes.io/master: ""
+    name: chungguangy-thornton-master1
+    resourceVersion: "19722492"
+    selfLink: /api/v1/nodes/chungguangy-thornton-master1
+    uid: 62094ed1-99e6-4116-90c9-5215edfe2405
+  spec:
+    podCIDR: 10.244.0.0/24
+    podCIDRs:
+    - 10.244.0.0/24
+    providerID: vsphere://42001a7a-59ff-cf1a-1bf5-ab8e66140267
+    taints:
+    - effect: NoSchedule
+      key: node-role.kubernetes.io/master
+  status:
+    addresses:
+    - address: 10.129.187.73
+      type: ExternalIP
+    - address: 10.129.187.73
+      type: InternalIP
+    - address: 2a07:2a41:ad07:11fb:250:56ff:fe80:6036
+      type: ExternalIP
+    - address: 2a07:2a41:ad07:11fb:250:56ff:fe80:6036
+      type: InternalIP
+    - address: chungguangy-thornton-master1
+      type: Hostname
+    allocatable:
+      cpu: "4"
+      ephemeral-storage: "4490212140"
+      hugepages-2Mi: "0"
+      memory: 16164284Ki
+      pods: "110"
+    capacity:
+      cpu: "4"
+      ephemeral-storage: 4758Mi
+      hugepages-2Mi: "0"
+      memory: 16266684Ki
+      pods: "110"
+    conditions:
+    - lastHeartbeatTime: "2023-07-03T00:26:55Z"
+      lastTransitionTime: "2023-05-04T16:18:27Z"
+      message: kubelet has sufficient memory available
+      reason: KubeletHasSufficientMemory
+      status: "False"
+      type: MemoryPressure
+    - lastHeartbeatTime: "2023-07-03T00:26:55Z"
+      lastTransitionTime: "2023-05-04T16:18:27Z"
+      message: kubelet has no disk pressure
+      reason: KubeletHasNoDiskPressure
+      status: "False"
+      type: DiskPressure
+    - lastHeartbeatTime: "2023-07-03T00:26:55Z"
+      lastTransitionTime: "2023-05-04T16:18:27Z"
+      message: kubelet has sufficient PID available
+      reason: KubeletHasSufficientPID
+      status: "False"
+      type: PIDPressure
+    - lastHeartbeatTime: "2023-07-03T00:26:55Z"
+      lastTransitionTime: "2023-05-04T16:19:08Z"
+      message: kubelet is posting ready status
+      reason: KubeletReady
+      status: "True"
+      type: Ready
+    daemonEndpoints:
+      kubeletEndpoint:
+        Port: 10250
+    images:
+    - names:
+      - nubesnovem-docker-hosted.forge.avaya.com/adp-messages-viewer@sha256:515b8fd63422b06625dd45fedc9ca4803646396cd06f7ef153e56b06509c9b8d
+      - nubesnovem-docker-hosted.forge.avaya.com/adp-messages-viewer:1.0.22
+      sizeBytes: 475814146
+    - names:
+      - k8s.gcr.io/etcd@sha256:4afb99b4690b418ffc2ceb67e1a17376457e441c1f09ab55447f0aaf992fa646
+      - k8s.gcr.io/etcd:3.4.3-0
+      sizeBytes: 288426917
+    - names:
+      - istio/proxyv2@sha256:361ce2cb5b30094e9a08346aec2178a753f5844a3e7ed873c0deff2b4cae3607
+      - istio/proxyv2:1.9.1
+      sizeBytes: 275371768
+    - names:
+      - k8s.gcr.io/kube-apiserver@sha256:67c8050918d28041163d973fa7cca9a84031a58e28e4ad3eb48a7a05a285520a
+      - k8s.gcr.io/kube-apiserver:v1.18.6
+      sizeBytes: 173001499
+    - names:
+      - k8s.gcr.io/kube-controller-manager@sha256:976ed781a4ab1f4952367635549aad755e9304047a5418c5901abab39b201617
+      - k8s.gcr.io/kube-controller-manager:v1.18.6
+      sizeBytes: 162392859
+    - names:
+      - k8s.gcr.io/kube-proxy@sha256:2a76fb7c2b2cafed3e65d9eb63b56b97e386f521739896934e46be3a2d580ce2
+      - k8s.gcr.io/kube-proxy:v1.18.6
+      sizeBytes: 117094721
+    - names:
+      - k8s.gcr.io/kube-scheduler@sha256:ac67a5c90f2bf3d86e937a9878f561f26801f13c6b30b05197fdc646aa1ac209
+      - k8s.gcr.io/kube-scheduler:v1.18.6
+      sizeBytes: 95283995
+    - names:
+      - quay.io/coreos/flannel@sha256:7806805c93b20a168d0bbbd25c6a213f00ac58a511c47e8fa6409543528a204e
+      - quay.io/coreos/flannel:v0.11.0-amd64
+      sizeBytes: 52567296
+    - names:
+      - k8s.gcr.io/coredns@sha256:2c8d61c46f484d881db43b34d13ca47a269336e576c81cf007ca740fa9ec0800
+      - k8s.gcr.io/coredns:1.6.7
+      sizeBytes: 43794147
+    - names:
+      - nubesnovem-docker-hosted.forge.avaya.com/virtual-auth-service@sha256:95e8e96fbcce97b012dcd2986a57d3d8ad9af08ee6b764a08ad5529f41e0169c
+      - nubesnovem-docker-hosted.forge.avaya.com/virtual-auth-service:4.169.0
+      sizeBytes: 27139247
+    - names:
+      - k8s.gcr.io/pause@sha256:927d98197ec1141a368550822d18fa1c60bdae27b78b0c004f705f548c07814f
+      - k8s.gcr.io/pause:3.2
+      sizeBytes: 682696
+    nodeInfo:
+      architecture: amd64
+      bootID: 9fe84e59-3da1-420f-ab4a-e51b4aa1865d
+      containerRuntimeVersion: docker://19.3.11
+      kernelVersion: 3.10.0-957.12.2.el7.x86_64
+      kubeProxyVersion: v1.18.6
+      kubeletVersion: v1.18.6
+      machineID: 6c5a9f9d85494604a8b1be3ca2121902
+      operatingSystem: linux
+      osImage: CentOS Linux 7 (Core)
+      systemUUID: 42001A7A-59FF-CF1A-1BF5-AB8E66140267
+- apiVersion: v1
+  kind: Node
+  metadata:
+    annotations:
+      flannel.alpha.coreos.com/backend-data: '{"VtepMAC":"3e:ab:8c:85:f2:3b"}'
+      flannel.alpha.coreos.com/backend-type: vxlan
+      flannel.alpha.coreos.com/kube-subnet-manager: "true"
+      flannel.alpha.coreos.com/public-ip: 10.129.187.74
+      kubeadm.alpha.kubernetes.io/cri-socket: /var/run/dockershim.sock
+      node.alpha.kubernetes.io/ttl: "0"
+      volumes.kubernetes.io/controller-managed-attach-detach: "true"
+    creationTimestamp: "2023-05-04T16:19:41Z"
+    labels:
+      beta.kubernetes.io/arch: amd64
+      beta.kubernetes.io/os: linux
+      kubernetes.io/arch: amd64
+      kubernetes.io/hostname: chungguangy-thornton-minion1
+      kubernetes.io/os: linux
+    name: chungguangy-thornton-minion1
+    resourceVersion: "19723099"
+    selfLink: /api/v1/nodes/chungguangy-thornton-minion1
+    uid: 7031e1f8-cf94-49ff-b63e-4587058369a0
+  spec:
+    podCIDR: 10.244.2.0/24
+    podCIDRs:
+    - 10.244.2.0/24
+    providerID: vsphere://420090be-9a85-77dd-392c-6e06c43b2015
+  status:
+    addresses:
+    - address: 10.129.187.74
+      type: ExternalIP
+    - address: 10.129.187.74
+      type: InternalIP
+    - address: 2a07:2a41:ad07:11fb:250:56ff:fe80:2a44
+      type: ExternalIP
+    - address: 2a07:2a41:ad07:11fb:250:56ff:fe80:2a44
+      type: InternalIP
+    - address: chungguangy-thornton-minion1
+      type: Hostname
+    allocatable:
+      cpu: "4"
+      ephemeral-storage: "4490212140"
+      hugepages-2Mi: "0"
+      memory: 16164284Ki
+      pods: "110"
+    capacity:
+      cpu: "4"
+      ephemeral-storage: 4758Mi
+      hugepages-2Mi: "0"
+      memory: 16266684Ki
+      pods: "110"
+    conditions:
+    - lastHeartbeatTime: "2023-07-03T00:29:40Z"
+      lastTransitionTime: "2023-05-04T16:19:41Z"
+      message: kubelet has sufficient memory available
+      reason: KubeletHasSufficientMemory
+      status: "False"
+      type: MemoryPressure
+    - lastHeartbeatTime: "2023-07-03T00:29:40Z"
+      lastTransitionTime: "2023-05-04T16:19:41Z"
+      message: kubelet has no disk pressure
+      reason: KubeletHasNoDiskPressure
+      status: "False"
+      type: DiskPressure
+    - lastHeartbeatTime: "2023-07-03T00:29:40Z"
+      lastTransitionTime: "2023-05-04T16:19:41Z"
+      message: kubelet has sufficient PID available
+      reason: KubeletHasSufficientPID
+      status: "False"
+      type: PIDPressure
+    - lastHeartbeatTime: "2023-07-03T00:29:40Z"
+      lastTransitionTime: "2023-05-04T16:20:02Z"
+      message: kubelet is posting ready status
+      reason: KubeletReady
+      status: "True"
+      type: Ready
+    daemonEndpoints:
+      kubeletEndpoint:
+        Port: 10250
+    images:
+    - names:
+      - jboss/keycloak@sha256:7caca7d35749ebeade412cdbca5a899e9a9d9a59a872f5d1185c59d993004694
+      - jboss/keycloak:6.0.1
+      sizeBytes: 1200672514
+    - names:
+      - nubesnovem-docker-hosted.forge.avaya.com/desktop-session-service@sha256:7e34d412412760d612deed50163a592e85e6369f051234170693706dfabe1cdb
+      - nubesnovem-docker-hosted.forge.avaya.com/desktop-session-service:4.169.4
+      sizeBytes: 403590030
+    - names:
+      - nubesnovem-docker-hosted.forge.avaya.com/desktop-work-service@sha256:da35766db90caa1f69d5509e42c4e22cb64bdc8fe9fef4c35051a58a1b3cbf5d
+      - nubesnovem-docker-hosted.forge.avaya.com/desktop-work-service:4.169.6
+      sizeBytes: 398774125
+    - names:
+      - nubesnovem-docker-hosted.forge.avaya.com/desktop-notification-service@sha256:d75b60c4960d7318c9f4135b7f9c16158841b413d18b68200ae2ab730d05f3ed
+      - nubesnovem-docker-hosted.forge.avaya.com/desktop-notification-service:4.169.2
+      sizeBytes: 398648358
+    - names:
+      - nubesnovem-docker-hosted.forge.avaya.com/desktop-supervisor-service@sha256:d0cc4df4cb7926b1da0bf01eaf06a0dd05710dafbc0ab48f0c3e516eb550035e
+      - nubesnovem-docker-hosted.forge.avaya.com/desktop-supervisor-service:4.169.2
+      sizeBytes: 398440617
+    - names:
+      - nubesnovem-docker-hosted.forge.avaya.com/desktop-media-service@sha256:73417ccc3f36ca80795d3c585af186af5f6815ef529d4c7d29dfec3b3a3dcc8a
+      - nubesnovem-docker-hosted.forge.avaya.com/desktop-media-service:4.169.2
+      sizeBytes: 398405937
+    - names:
+      - nubesnovem-docker-hosted.forge.avaya.com/kafka@sha256:251f031eb0eaf58e5189e23162fd797bb7c9b1a804ec2bb8b9cd17c1e5437f01
+      - nubesnovem-docker-hosted.forge.avaya.com/kafka:3.0.0
+      sizeBytes: 333369528
+    - names:
+      - nubesnovem-docker-hosted.forge.avaya.com/kafka-prometheus-jmx-exporter@sha256:d237a12cc0cde42b539bcb5efc0008ba5e6ca1351b7843ed52bd574d181c5efd
+      - nubesnovem-docker-hosted.forge.avaya.com/kafka-prometheus-jmx-exporter:3.0.0
+      sizeBytes: 312260116
+    - names:
+      - wurstmeister/kafka@sha256:3a63b48894bce633fb2f0d2579e162163367113d79ea12ca296120e90952b463
+      - wurstmeister/kafka:1.1.0
+      sizeBytes: 292348023
+    - names:
+      - k8s.gcr.io/etcd@sha256:4afb99b4690b418ffc2ceb67e1a17376457e441c1f09ab55447f0aaf992fa646
+      - k8s.gcr.io/etcd:3.4.3-0
+      sizeBytes: 288426917
+    - names:
+      - istio/proxyv2@sha256:361ce2cb5b30094e9a08346aec2178a753f5844a3e7ed873c0deff2b4cae3607
+      - istio/proxyv2:1.9.1
+      sizeBytes: 275371768
+    - names:
+      - nubesnovem-docker-hosted.forge.avaya.com/workspaces-content-service@sha256:3f6438f8c7a01fd67be6c840f5885497fc514d92be43934f1655ef52e152d12d
+      - nubesnovem-docker-hosted.forge.avaya.com/workspaces-content-service:4.164.1
+      sizeBytes: 241151021
+    - names:
+      - istio/pilot@sha256:855c3fc2a98c28dc342dff452f0cd67f6322216a89486a5ddea4529290abe9e2
+      - istio/pilot:1.9.1
+      sizeBytes: 212419398
+    - names:
+      - k8s.gcr.io/kube-apiserver@sha256:67c8050918d28041163d973fa7cca9a84031a58e28e4ad3eb48a7a05a285520a
+      - k8s.gcr.io/kube-apiserver:v1.18.6
+      sizeBytes: 173001499
+    - names:
+      - k8s.gcr.io/kube-controller-manager@sha256:976ed781a4ab1f4952367635549aad755e9304047a5418c5901abab39b201617
+      - k8s.gcr.io/kube-controller-manager:v1.18.6
+      sizeBytes: 162392859
+    - names:
+      - metam-docker-hosted.forge.avaya.com/workspaces-uwf-content-service@sha256:a399ef513ac87d5ec5e5bc225426abf81ed779a760c77517986eb456adbdc878
+      - metam-docker-hosted.forge.avaya.com/workspaces-uwf-content-service:4.169.4
+      sizeBytes: 133341045
+    - names:
+      - metam-docker-hosted.forge.avaya.com/workspaces-uwf-content-service@sha256:79d2ec6365163ddae92e119477d51f26b2a66756966fbc8e64b6b8c52d544d22
+      - metam-docker-hosted.forge.avaya.com/workspaces-uwf-content-service:4.169.9
+      sizeBytes: 133332726
+    - names:
+      - nubesnovem-docker-hosted.forge.avaya.com/kafka-init@sha256:5efd84ceebf356ad146225cd75f45e38626ab6a50d1259c8010c0ccbcd8c70bc
+      - nubesnovem-docker-hosted.forge.avaya.com/kafka-init:3.0.0
+      sizeBytes: 129402900
+    - names:
+      - k8s.gcr.io/kube-proxy@sha256:2a76fb7c2b2cafed3e65d9eb63b56b97e386f521739896934e46be3a2d580ce2
+      - k8s.gcr.io/kube-proxy:v1.18.6
+      sizeBytes: 117094721
+    - names:
+      - metam-docker-hosted.forge.avaya.com/realtime-reporting@sha256:df7cd8dc134c869b59995c3c00dec490a0d755d5adb40cbe42db928784fe155d
+      - metam-docker-hosted.forge.avaya.com/realtime-reporting:4.169.8
+      sizeBytes: 111021168
+    - names:
+      - metam-docker-hosted.forge.avaya.com/uwf-content-service@sha256:76f3f2f09327273ac5e978abe72b7113310aa001ff7da94a8496c57d9ee03fdc
+      - metam-docker-hosted.forge.avaya.com/uwf-content-service:4.168.3
+      sizeBytes: 110914979
+    - names:
+      - metam-docker-hosted.forge.avaya.com/admin-workspaces-widgets@sha256:b5e20592cf9170f7c2d26e8473dd918ddbf0fe5c3ac86dbc49cae90fb3a2066e
+      - metam-docker-hosted.forge.avaya.com/admin-workspaces-widgets:4.169.4
+      sizeBytes: 109591672
+    - names:
+      - metam-docker-hosted.forge.avaya.com/desktop-telemetry-client@sha256:3df261c7d287df6fc84a674f5e3bb59ad4e82bc87e5a93e4e4e3b1adad43517e
+      - metam-docker-hosted.forge.avaya.com/desktop-telemetry-client:4.169.0
+      sizeBytes: 108879731
+    - names:
+      - quay.io/kiali/kiali@sha256:fa494cb4ef3f3e4f593f3b12f77fced35fe1dff3c7c97e5f54f3f834d778e18d
+      - quay.io/kiali/kiali:v1.63
+      sizeBytes: 105565526
+    - names:
+      - metam-docker-hosted.forge.avaya.com/uwf-registry-service@sha256:e408de64766505a66af1a634f8c6b63d17a4b2c0dfb788192a9a7aff0aa89d3c
+      - metam-docker-hosted.forge.avaya.com/uwf-registry-service:4.168.2
+      sizeBytes: 99932453
+    - names:
+      - natsio/nats-box@sha256:5719180ba4114f7ff8fdd1ce724f002b2fdbf50a3222a8574d3a5d5122e6bdaa
+      - natsio/nats-box:0.13.8
+      sizeBytes: 98291118
+    - names:
+      - k8s.gcr.io/kube-scheduler@sha256:ac67a5c90f2bf3d86e937a9878f561f26801f13c6b30b05197fdc646aa1ac209
+      - k8s.gcr.io/kube-scheduler:v1.18.6
+      sizeBytes: 95283995
+    - names:
+      - nubesnovem-docker-hosted.forge.avaya.com/desktop-request-validation-service@sha256:3e095209627414bb19bf7222f810a90b2a6fcbacfa3fc9195f3d5e17e8550468
+      - nubesnovem-docker-hosted.forge.avaya.com/desktop-request-validation-service:4.169.1
+      sizeBytes: 88364002
+    - names:
+      - nubesnovem-docker-hosted.forge.avaya.com/desktop-cc-api-eventing-service@sha256:1c3285f6b3ca44d0a4926b45a46c2cfd4c8e609a2d1a4400dbb99fcaf3de4f39
+      - nubesnovem-docker-hosted.forge.avaya.com/desktop-cc-api-eventing-service:4.169.2
+      sizeBytes: 79964785
+    - names:
+      - nubesnovem-docker-hosted.forge.avaya.com/desktop-cc-api-request-service@sha256:c4ab006de40502582d10f2003f4ddca72ffb3caf506a2df814f7941c16de7078
+      - nubesnovem-docker-hosted.forge.avaya.com/desktop-cc-api-request-service:4.169.2
+      sizeBytes: 75931450
+    - names:
+      - nubesnovem-docker-hosted.forge.avaya.com/desktop-cis-service@sha256:f92b6ee77f25913531396881fbf11f6d3263c1de8b72aef6bb6928a8b73d7871
+      - nubesnovem-docker-hosted.forge.avaya.com/desktop-cis-service:4.169.2
+      sizeBytes: 73316250
+    - names:
+      - nubesnovem-docker-hosted.forge.avaya.com/virtual-provider-service@sha256:086b8902e0857e066cd4c46adddba85e9428f79c8681c2884b2ca399e1127597
+      - nubesnovem-docker-hosted.forge.avaya.com/virtual-provider-service:4.169.2
+      sizeBytes: 71495082
+    - names:
+      - nubesnovem-docker-hosted.forge.avaya.com/desktop-cc-api-client-connection-service@sha256:ba4bca83b328dccef6206db1f280b3fa88a36c083d9295707f6b9b4cab5787e0
+      - nubesnovem-docker-hosted.forge.avaya.com/desktop-cc-api-client-connection-service:4.169.1
+      sizeBytes: 71461578
+    - names:
+      - nubesnovem-docker-hosted.forge.avaya.com/desktop-admin-api-service@sha256:b8134a22acc743661440ae54fcd129d4e44cf8f9f20b2fdab2934d7323521621
+      - nubesnovem-docker-hosted.forge.avaya.com/desktop-admin-api-service:4.169.0
+      sizeBytes: 70391746
+    - names:
+      - nubesnovem-docker-hosted.forge.avaya.com/desktop-telemetry-collector@sha256:12d2000242025c09a5b6b2f91c326fa9a9580397e28add290407c5d2fd4f5f3f
+      - nubesnovem-docker-hosted.forge.avaya.com/desktop-telemetry-collector:4.169.0
+      sizeBytes: 68916949
+    - names:
+      - nubesnovem-docker-hosted.forge.avaya.com/desktop-broadcast-service@sha256:3474505b2ab23ca1bda626678a0657f39ecc6c63c7f4623fbc7bed7d23eaa27c
+      - nubesnovem-docker-hosted.forge.avaya.com/desktop-broadcast-service:4.169.4
+      sizeBytes: 67426292
+    - names:
+      - nubesnovem-docker-hosted.forge.avaya.com/desktop-screenpop-service@sha256:596cd1da1a35788dcd0a052da0c31103e6fc8d3ec818c603e30ecf10789a3412
+      - nubesnovem-docker-hosted.forge.avaya.com/desktop-screenpop-service:4.169.1
+      sizeBytes: 65825537
+    - names:
+      - nubesnovem-docker-hosted.forge.avaya.com/desktop-sec-service-go@sha256:844786ab4e6d4201465676300c8513b9dda74f8b48181d3a210532c5594cfc05
+      - nubesnovem-docker-hosted.forge.avaya.com/desktop-sec-service-go:4.169.1
+      sizeBytes: 65805323
+    - names:
+      - nubesnovem-docker-hosted.forge.avaya.com/virtual-request-service@sha256:7ac2c24ca5d74f454fa6000816014904f9f625a9b105e52b43370c34b4171bba
+      - nubesnovem-docker-hosted.forge.avaya.com/virtual-request-service:4.169.2
+      sizeBytes: 63761034
+    - names:
+      - metam-docker-hosted.forge.avaya.com/realtime-reporting-api-service@sha256:36f9f6cfbdd89213f094a21661f28f09b234f76cd6b50cfe99ff2b740d1a9762
+      - metam-docker-hosted.forge.avaya.com/realtime-reporting-api-service:4.169.0
+      sizeBytes: 63192453
+    - names:
+      - metam-docker-hosted.forge.avaya.com/uwf-rbac-service@sha256:2adcbb746dd7b9486c4dc6db0932c55ceb367cc86729c76559a91ec88715300b
+      - metam-docker-hosted.forge.avaya.com/uwf-rbac-service:4.168.0
+      sizeBytes: 60297488
+    - names:
+      - nubesnovem-docker-hosted.forge.avaya.com/eventing-init@sha256:45078462413f35ab3c2fe942dbd81c5d29172d2d4cdd0d283b97e35f8348bc0d
+      - nubesnovem-docker-hosted.forge.avaya.com/eventing-init:1.1.24
+      sizeBytes: 56802809
+    - names:
+      - quay.io/coreos/flannel@sha256:7806805c93b20a168d0bbbd25c6a213f00ac58a511c47e8fa6409543528a204e
+      - quay.io/coreos/flannel:v0.11.0-amd64
+      sizeBytes: 52567296
+    - names:
+      - nubesnovem-docker-hosted.forge.avaya.com/eventing-init@sha256:e580187b4fef7cd2d258c72d4e23b37067eb230fc72661dd3b34c58ada573a15
+      - nubesnovem-docker-hosted.forge.avaya.com/eventing-init:1.1.44
+      sizeBytes: 52411750
+    - names:
+      - nubesnovem-docker-hosted.forge.avaya.com/eventing-init@sha256:a77b0c5b2f6718ebda1bd38caae252974687c4d614cbbfc842b053b9e404684a
+      - nubesnovem-docker-hosted.forge.avaya.com/eventing-init:1.1.38
+      sizeBytes: 52219475
+    - names:
+      - kubernetesui/metrics-scraper@sha256:76049887f07a0476dc93efc2d3569b9529bf982b22d29f356092ce206e98765c
+      - kubernetesui/metrics-scraper:v1.0.8
+      sizeBytes: 43815949
+    - names:
+      - k8s.gcr.io/coredns@sha256:2c8d61c46f484d881db43b34d13ca47a269336e576c81cf007ca740fa9ec0800
+      - k8s.gcr.io/coredns:1.6.7
+      sizeBytes: 43794147
+    - names:
+      - quay.io/jetstack/cert-manager-cainjector@sha256:2b84fa437332125fabe7c6199f1a2e3f94e091f4981c13d334c601c76e9832c3
+      - quay.io/jetstack/cert-manager-cainjector:v0.15.1
+      sizeBytes: 39480964
+    - names:
+      - metam-docker-hosted.forge.avaya.com/virtual-uwf-auth-service@sha256:4c5752172c4af0fce8ad73cdfa9de726c7dafd08f0da851cdbee375be5317cc8
+      - metam-docker-hosted.forge.avaya.com/virtual-uwf-auth-service:4.169.0
+      sizeBytes: 27474628
+    - names:
+      - nats@sha256:51ed1dcadcd928cbca6b4b2846491bd14667dca111ac63fdb001eef89cb9192f
+      - nats:2.8.2-alpine
+      sizeBytes: 17996203
+    nodeInfo:
+      architecture: amd64
+      bootID: 94956626-c6fa-46e3-909b-562d7e89314a
+      containerRuntimeVersion: docker://19.3.11
+      kernelVersion: 3.10.0-957.12.2.el7.x86_64
+      kubeProxyVersion: v1.18.6
+      kubeletVersion: v1.18.6
+      machineID: 6c5a9f9d85494604a8b1be3ca2121902
+      operatingSystem: linux
+      osImage: CentOS Linux 7 (Core)
+      systemUUID: 420090BE-9A85-77DD-392C-6E06C43B2015
+    volumesAttached:
+    - devicePath: /dev/disk/by-id/wwn-0x6000c291146e710b41af275e37f23435
+      name: kubernetes.io/vsphere-volume/[RDFT-WorkspacesN] kubevols/chungguangy-thornton-dynamic-pvc-5fedc561-4773-49dd-b854-e66ac28e6423.vmdk
+    - devicePath: /dev/disk/by-id/wwn-0x6000c29c5885578dec8f04601fbf45d3
+      name: kubernetes.io/vsphere-volume/[RDFT-WorkspacesN] kubevols/chungguangy-thornton-dynamic-pvc-706fe66b-1d0b-4304-b019-6a8be2e5762c.vmdk
+    - devicePath: /dev/disk/by-id/wwn-0x6000c29981791c94728e83abd39b10e1
+      name: kubernetes.io/vsphere-volume/[RDFT-WorkspacesN] kubevols/chungguangy-thornton-dynamic-pvc-9b18186e-a1d2-492f-9f49-4bf37f6ff5d3.vmdk
+    volumesInUse:
+    - kubernetes.io/vsphere-volume/[RDFT-WorkspacesN] kubevols/chungguangy-thornton-dynamic-pvc-5fedc561-4773-49dd-b854-e66ac28e6423.vmdk
+    - kubernetes.io/vsphere-volume/[RDFT-WorkspacesN] kubevols/chungguangy-thornton-dynamic-pvc-706fe66b-1d0b-4304-b019-6a8be2e5762c.vmdk
+    - kubernetes.io/vsphere-volume/[RDFT-WorkspacesN] kubevols/chungguangy-thornton-dynamic-pvc-9b18186e-a1d2-492f-9f49-4bf37f6ff5d3.vmdk
+- apiVersion: v1
+  kind: Node
+  metadata:
+    annotations:
+      flannel.alpha.coreos.com/backend-data: '{"VtepMAC":"32:56:62:96:87:aa"}'
+      flannel.alpha.coreos.com/backend-type: vxlan
+      flannel.alpha.coreos.com/kube-subnet-manager: "true"
+      flannel.alpha.coreos.com/public-ip: 10.129.187.75
+      kubeadm.alpha.kubernetes.io/cri-socket: /var/run/dockershim.sock
+      node.alpha.kubernetes.io/ttl: "0"
+      volumes.kubernetes.io/controller-managed-attach-detach: "true"
+    creationTimestamp: "2023-05-04T16:19:40Z"
+    labels:
+      beta.kubernetes.io/arch: amd64
+      beta.kubernetes.io/os: linux
+      kubernetes.io/arch: amd64
+      kubernetes.io/hostname: chungguangy-thornton-minion2
+      kubernetes.io/os: linux
+    name: chungguangy-thornton-minion2
+    resourceVersion: "19722489"
+    selfLink: /api/v1/nodes/chungguangy-thornton-minion2
+    uid: da7c2b3d-600a-4357-a0a8-edb85de25c1d
+  spec:
+    podCIDR: 10.244.1.0/24
+    podCIDRs:
+    - 10.244.1.0/24
+    providerID: vsphere://42004bdb-fb9a-0b1b-5e1f-6582d512827b
+  status:
+    addresses:
+    - address: 10.129.187.75
+      type: ExternalIP
+    - address: 10.129.187.75
+      type: InternalIP
+    - address: 2a07:2a41:ad07:11fb:250:56ff:fe80:6367
+      type: ExternalIP
+    - address: 2a07:2a41:ad07:11fb:250:56ff:fe80:6367
+      type: InternalIP
+    - address: chungguangy-thornton-minion2
+      type: Hostname
+    allocatable:
+      cpu: "4"
+      ephemeral-storage: "4490212140"
+      hugepages-2Mi: "0"
+      memory: 16164284Ki
+      pods: "110"
+    capacity:
+      cpu: "4"
+      ephemeral-storage: 4758Mi
+      hugepages-2Mi: "0"
+      memory: 16266684Ki
+      pods: "110"
+    conditions:
+    - lastHeartbeatTime: "2023-07-03T00:26:54Z"
+      lastTransitionTime: "2023-05-04T16:19:40Z"
+      message: kubelet has sufficient memory available
+      reason: KubeletHasSufficientMemory
+      status: "False"
+      type: MemoryPressure
+    - lastHeartbeatTime: "2023-07-03T00:26:54Z"
+      lastTransitionTime: "2023-05-04T16:19:40Z"
+      message: kubelet has no disk pressure
+      reason: KubeletHasNoDiskPressure
+      status: "False"
+      type: DiskPressure
+    - lastHeartbeatTime: "2023-07-03T00:26:54Z"
+      lastTransitionTime: "2023-05-04T16:19:40Z"
+      message: kubelet has sufficient PID available
+      reason: KubeletHasSufficientPID
+      status: "False"
+      type: PIDPressure
+    - lastHeartbeatTime: "2023-07-03T00:26:54Z"
+      lastTransitionTime: "2023-05-04T16:20:01Z"
+      message: kubelet is posting ready status
+      reason: KubeletReady
+      status: "True"
+      type: Ready
+    daemonEndpoints:
+      kubeletEndpoint:
+        Port: 10250
+    images:
+    - names:
+      - strimzi/topic-operator@sha256:61ad88e41658e05639b7f18125b07f6613d771a13ef7575f3ee5e99eab74954f
+      - strimzi/topic-operator:0.11.4
+      sizeBytes: 488406502
+    - names:
+      - nubesnovem-docker-hosted.forge.avaya.com/kafdrop-kube@sha256:bf9c3ef4a0a1b140c84d9cfab8f50c89169fe23c44b17570df087683ef4cc895
+      - nubesnovem-docker-hosted.forge.avaya.com/kafdrop-kube:3.27.0
+      sizeBytes: 454507753
+    - names:
+      - nubesnovem-docker-hosted.forge.avaya.com/desktop-admin-service@sha256:9d337eceb590d9d75381bccadacdc8c1cc112fca89685306bbe14e5c8f3af0c9
+      - nubesnovem-docker-hosted.forge.avaya.com/desktop-admin-service:4.169.2
+      sizeBytes: 413813385
+    - names:
+      - nubesnovem-docker-hosted.forge.avaya.com/desktop-sec-service@sha256:5c5f7f53fead88b2452a43c0e3ade058ce51f7222a5cb4e1a24df62fc4aa8f6b
+      - nubesnovem-docker-hosted.forge.avaya.com/desktop-sec-service:4.169.1
+      sizeBytes: 404091427
+    - names:
+      - nubesnovem-docker-hosted.forge.avaya.com/kafka@sha256:251f031eb0eaf58e5189e23162fd797bb7c9b1a804ec2bb8b9cd17c1e5437f01
+      - nubesnovem-docker-hosted.forge.avaya.com/kafka:3.0.0
+      sizeBytes: 333369528
+    - names:
+      - nubesnovem-docker-hosted.forge.avaya.com/kafka-prometheus-jmx-exporter@sha256:d237a12cc0cde42b539bcb5efc0008ba5e6ca1351b7843ed52bd574d181c5efd
+      - nubesnovem-docker-hosted.forge.avaya.com/kafka-prometheus-jmx-exporter:3.0.0
+      sizeBytes: 312260116
+    - names:
+      - wurstmeister/kafka@sha256:3a63b48894bce633fb2f0d2579e162163367113d79ea12ca296120e90952b463
+      - wurstmeister/kafka:1.1.0
+      sizeBytes: 292348023
+    - names:
+      - k8s.gcr.io/etcd@sha256:4afb99b4690b418ffc2ceb67e1a17376457e441c1f09ab55447f0aaf992fa646
+      - k8s.gcr.io/etcd:3.4.3-0
+      sizeBytes: 288426917
+    - names:
+      - istio/proxyv2@sha256:361ce2cb5b30094e9a08346aec2178a753f5844a3e7ed873c0deff2b4cae3607
+      - istio/proxyv2:1.9.1
+      sizeBytes: 275371768
+    - names:
+      - kubernetesui/dashboard@sha256:2e500d29e9d5f4a086b908eb8dfe7ecac57d2ab09d65b24f588b1d449841ef93
+      - kubernetesui/dashboard:v2.7.0
+      sizeBytes: 245710051
+    - names:
+      - k8s.gcr.io/kube-apiserver@sha256:67c8050918d28041163d973fa7cca9a84031a58e28e4ad3eb48a7a05a285520a
+      - k8s.gcr.io/kube-apiserver:v1.18.6
+      sizeBytes: 173001499
+    - names:
+      - k8s.gcr.io/kube-controller-manager@sha256:976ed781a4ab1f4952367635549aad755e9304047a5418c5901abab39b201617
+      - k8s.gcr.io/kube-controller-manager:v1.18.6
+      sizeBytes: 162392859
+    - names:
+      - nubesnovem-docker-hosted.forge.avaya.com/kafka-init@sha256:5efd84ceebf356ad146225cd75f45e38626ab6a50d1259c8010c0ccbcd8c70bc
+      - nubesnovem-docker-hosted.forge.avaya.com/kafka-init:3.0.0
+      sizeBytes: 129402900
+    - names:
+      - k8s.gcr.io/kube-proxy@sha256:2a76fb7c2b2cafed3e65d9eb63b56b97e386f521739896934e46be3a2d580ce2
+      - k8s.gcr.io/kube-proxy:v1.18.6
+      sizeBytes: 117094721
+    - names:
+      - metam-docker-hosted.forge.avaya.com/realtime-reporting@sha256:56930031798fee49fef9fb251fc13a93e54f6391825a562e3fbb729a8ae6af87
+      - metam-docker-hosted.forge.avaya.com/realtime-reporting:4.169.13
+      sizeBytes: 111022909
+    - names:
+      - metam-docker-hosted.forge.avaya.com/realtime-reporting@sha256:bc3cb0f09a02e144d8f4764887c152538702f9720b4463f0f6dac3e5f9388f30
+      - metam-docker-hosted.forge.avaya.com/realtime-reporting:4.169.11
+      sizeBytes: 111021397
+    - names:
+      - metam-docker-hosted.forge.avaya.com/realtime-reporting@sha256:df7cd8dc134c869b59995c3c00dec490a0d755d5adb40cbe42db928784fe155d
+      - metam-docker-hosted.forge.avaya.com/realtime-reporting:4.169.8
+      sizeBytes: 111021168
+    - names:
+      - metam-docker-hosted.forge.avaya.com/uwf-content-service@sha256:76f3f2f09327273ac5e978abe72b7113310aa001ff7da94a8496c57d9ee03fdc
+      - metam-docker-hosted.forge.avaya.com/uwf-content-service:4.168.3
+      sizeBytes: 110914979
+    - names:
+      - metam-docker-hosted.forge.avaya.com/admin-workspaces-widgets@sha256:b5e20592cf9170f7c2d26e8473dd918ddbf0fe5c3ac86dbc49cae90fb3a2066e
+      - metam-docker-hosted.forge.avaya.com/admin-workspaces-widgets:4.169.4
+      sizeBytes: 109591672
+    - names:
+      - metam-docker-hosted.forge.avaya.com/admin-workspaces-widgets@sha256:4700623d7daaf99e01185b95a9a9880e1dfd24df67ecc52b440f987995eda337
+      - metam-docker-hosted.forge.avaya.com/admin-workspaces-widgets:4.169.3
+      sizeBytes: 109591516
+    - names:
+      - metam-docker-hosted.forge.avaya.com/desktop-telemetry-client@sha256:3df261c7d287df6fc84a674f5e3bb59ad4e82bc87e5a93e4e4e3b1adad43517e
+      - metam-docker-hosted.forge.avaya.com/desktop-telemetry-client:4.169.0
+      sizeBytes: 108879731
+    - names:
+      - metam-docker-hosted.forge.avaya.com/uwf-registry-service@sha256:e408de64766505a66af1a634f8c6b63d17a4b2c0dfb788192a9a7aff0aa89d3c
+      - metam-docker-hosted.forge.avaya.com/uwf-registry-service:4.168.2
+      sizeBytes: 99932453
+    - names:
+      - natsio/nats-box@sha256:5719180ba4114f7ff8fdd1ce724f002b2fdbf50a3222a8574d3a5d5122e6bdaa
+      - natsio/nats-box:0.13.8
+      sizeBytes: 98291118
+    - names:
+      - k8s.gcr.io/kube-scheduler@sha256:ac67a5c90f2bf3d86e937a9878f561f26801f13c6b30b05197fdc646aa1ac209
+      - k8s.gcr.io/kube-scheduler:v1.18.6
+      sizeBytes: 95283995
+    - names:
+      - nubesnovem-docker-hosted.forge.avaya.com/desktop-request-validation-service@sha256:3e095209627414bb19bf7222f810a90b2a6fcbacfa3fc9195f3d5e17e8550468
+      - nubesnovem-docker-hosted.forge.avaya.com/desktop-request-validation-service:4.169.1
+      sizeBytes: 88364002
+    - names:
+      - natsio/nats-box@sha256:9fbf7bf684e4aebca28c832d69502508dc40d90aca384e9de7dfefd635b43f71
+      - natsio/nats-box:0.11.0
+      sizeBytes: 79988591
+    - names:
+      - nubesnovem-docker-hosted.forge.avaya.com/desktop-cc-api-eventing-service@sha256:1c3285f6b3ca44d0a4926b45a46c2cfd4c8e609a2d1a4400dbb99fcaf3de4f39
+      - nubesnovem-docker-hosted.forge.avaya.com/desktop-cc-api-eventing-service:4.169.2
+      sizeBytes: 79964785
+    - names:
+      - nubesnovem-docker-hosted.forge.avaya.com/desktop-cc-api-request-service@sha256:c4ab006de40502582d10f2003f4ddca72ffb3caf506a2df814f7941c16de7078
+      - nubesnovem-docker-hosted.forge.avaya.com/desktop-cc-api-request-service:4.169.2
+      sizeBytes: 75931450
+    - names:
+      - nubesnovem-docker-hosted.forge.avaya.com/desktop-cis-service@sha256:f92b6ee77f25913531396881fbf11f6d3263c1de8b72aef6bb6928a8b73d7871
+      - nubesnovem-docker-hosted.forge.avaya.com/desktop-cis-service:4.169.2
+      sizeBytes: 73316250
+    - names:
+      - nubesnovem-docker-hosted.forge.avaya.com/virtual-provider-service@sha256:086b8902e0857e066cd4c46adddba85e9428f79c8681c2884b2ca399e1127597
+      - nubesnovem-docker-hosted.forge.avaya.com/virtual-provider-service:4.169.2
+      sizeBytes: 71495082
+    - names:
+      - nubesnovem-docker-hosted.forge.avaya.com/desktop-cc-api-client-connection-service@sha256:ba4bca83b328dccef6206db1f280b3fa88a36c083d9295707f6b9b4cab5787e0
+      - nubesnovem-docker-hosted.forge.avaya.com/desktop-cc-api-client-connection-service:4.169.1
+      sizeBytes: 71461578
+    - names:
+      - nubesnovem-docker-hosted.forge.avaya.com/desktop-admin-api-service@sha256:b8134a22acc743661440ae54fcd129d4e44cf8f9f20b2fdab2934d7323521621
+      - nubesnovem-docker-hosted.forge.avaya.com/desktop-admin-api-service:4.169.0
+      sizeBytes: 70391746
+    - names:
+      - nubesnovem-docker-hosted.forge.avaya.com/desktop-broadcast-service@sha256:60e77e2fa1ddd570b9fe4af163658e05704b4d8ab970fa55dadcb05cdd1f825e
+      - nubesnovem-docker-hosted.forge.avaya.com/desktop-broadcast-service:4.169.3
+      sizeBytes: 67427215
+    - names:
+      - nubesnovem-docker-hosted.forge.avaya.com/desktop-broadcast-service@sha256:3474505b2ab23ca1bda626678a0657f39ecc6c63c7f4623fbc7bed7d23eaa27c
+      - nubesnovem-docker-hosted.forge.avaya.com/desktop-broadcast-service:4.169.4
+      sizeBytes: 67426292
+    - names:
+      - nubesnovem-docker-hosted.forge.avaya.com/desktop-screenpop-service@sha256:596cd1da1a35788dcd0a052da0c31103e6fc8d3ec818c603e30ecf10789a3412
+      - nubesnovem-docker-hosted.forge.avaya.com/desktop-screenpop-service:4.169.1
+      sizeBytes: 65825537
+    - names:
+      - nubesnovem-docker-hosted.forge.avaya.com/virtual-request-service@sha256:7ac2c24ca5d74f454fa6000816014904f9f625a9b105e52b43370c34b4171bba
+      - nubesnovem-docker-hosted.forge.avaya.com/virtual-request-service:4.169.2
+      sizeBytes: 63761034
+    - names:
+      - metam-docker-hosted.forge.avaya.com/uwf-rbac-service@sha256:2adcbb746dd7b9486c4dc6db0932c55ceb367cc86729c76559a91ec88715300b
+      - metam-docker-hosted.forge.avaya.com/uwf-rbac-service:4.168.0
+      sizeBytes: 60297488
+    - names:
+      - nubesnovem-docker-hosted.forge.avaya.com/virtual-cc-lite@sha256:28e75991ad132e7fb809bc83afe8645c88016f46cd3d850fa3f27f574149d4b9
+      - nubesnovem-docker-hosted.forge.avaya.com/virtual-cc-lite:4.166.2
+      sizeBytes: 58809040
+    - names:
+      - nubesnovem-docker-hosted.forge.avaya.com/desktop-sync-service@sha256:dd215ab4e5747deaffcf9c34fcd704f7b4aca70d1e54ae608cf39124d4fdbce8
+      - nubesnovem-docker-hosted.forge.avaya.com/desktop-sync-service:4.169.1
+      sizeBytes: 56570948
+    - names:
+      - quay.io/coreos/flannel@sha256:7806805c93b20a168d0bbbd25c6a213f00ac58a511c47e8fa6409543528a204e
+      - quay.io/coreos/flannel:v0.11.0-amd64
+      sizeBytes: 52567296
+    - names:
+      - quay.io/jetstack/cert-manager-controller@sha256:bc3f4db7b6db3967e6d4609aa0b2ed7254b1491aa69feb383f47e6c509516384
+      - quay.io/jetstack/cert-manager-controller:v0.15.1
+      sizeBytes: 52432131
+    - names:
+      - nubesnovem-docker-hosted.forge.avaya.com/eventing-init@sha256:e580187b4fef7cd2d258c72d4e23b37067eb230fc72661dd3b34c58ada573a15
+      - nubesnovem-docker-hosted.forge.avaya.com/eventing-init:1.1.44
+      sizeBytes: 52411750
+    - names:
+      - nubesnovem-docker-hosted.forge.avaya.com/eventing-init@sha256:a77b0c5b2f6718ebda1bd38caae252974687c4d614cbbfc842b053b9e404684a
+      - nubesnovem-docker-hosted.forge.avaya.com/eventing-init:1.1.38
+      sizeBytes: 52219475
+    - names:
+      - k8s.gcr.io/coredns@sha256:2c8d61c46f484d881db43b34d13ca47a269336e576c81cf007ca740fa9ec0800
+      - k8s.gcr.io/coredns:1.6.7
+      sizeBytes: 43794147
+    - names:
+      - quay.io/jetstack/cert-manager-webhook@sha256:8c07a82d3fdad132ec719084ccd90b4b1abc5515d376d70797ba58d201b30091
+      - quay.io/jetstack/cert-manager-webhook:v0.15.1
+      sizeBytes: 39358529
+    - names:
+      - metam-docker-hosted.forge.avaya.com/virtual-uwf-auth-service@sha256:4c5752172c4af0fce8ad73cdfa9de726c7dafd08f0da851cdbee375be5317cc8
+      - metam-docker-hosted.forge.avaya.com/virtual-uwf-auth-service:4.169.0
+      sizeBytes: 27474628
+    - names:
+      - nats@sha256:887f0193c5b72b66ff4795b807f3e9e324c34ffafbce612e54b2be8140a06de1
+      - nats:2.9.16-alpine
+      sizeBytes: 20244130
+    - names:
+      - nats@sha256:51ed1dcadcd928cbca6b4b2846491bd14667dca111ac63fdb001eef89cb9192f
+      - nats:2.8.2-alpine
+      sizeBytes: 17996203
+    - names:
+      - natsio/prometheus-nats-exporter@sha256:bce728062c4f2bcdb2cfa8f22266efa70122ff6c51c02e04f3a56eafd1bea001
+      - natsio/prometheus-nats-exporter:0.10.1
+      sizeBytes: 14055158
+    - names:
+      - natsio/prometheus-nats-exporter@sha256:6c9b8005cc8b2431b8b99d981f440fe47230652f5c2c11a83bb4bc376613f00e
+      - natsio/prometheus-nats-exporter:0.9.3
+      sizeBytes: 13335882
+    nodeInfo:
+      architecture: amd64
+      bootID: 6c4189d1-869c-4e8d-8393-24bc32da762e
+      containerRuntimeVersion: docker://19.3.11
+      kernelVersion: 3.10.0-957.12.2.el7.x86_64
+      kubeProxyVersion: v1.18.6
+      kubeletVersion: v1.18.6
+      machineID: 6c5a9f9d85494604a8b1be3ca2121902
+      operatingSystem: linux
+      osImage: CentOS Linux 7 (Core)
+      systemUUID: 42004BDB-FB9A-0B1B-5E1F-6582D512827B
+    volumesAttached:
+    - devicePath: /dev/disk/by-id/wwn-0x6000c29e70b43ff3efb90ed93dcd8c59
+      name: kubernetes.io/vsphere-volume/[RDFT-WorkspacesN] kubevols/chungguangy-thornton-dynamic-pvc-129c8b61-c291-4843-9b59-c1bdcbc88427.vmdk
+    - devicePath: /dev/disk/by-id/wwn-0x6000c29950da6a1283c325f3480b5569
+      name: kubernetes.io/vsphere-volume/[RDFT-WorkspacesN] kubevols/chungguangy-thornton-dynamic-pvc-623fb833-907a-438d-808a-d13321de8804.vmdk
+    - devicePath: /dev/disk/by-id/wwn-0x6000c2909be5e1b25ed337a2de054919
+      name: kubernetes.io/vsphere-volume/[RDFT-WorkspacesN] kubevols/chungguangy-thornton-dynamic-pvc-9dce4cd6-47a7-4cff-84c2-8f04f14929fc.vmdk
+    - devicePath: /dev/disk/by-id/wwn-0x6000c29bf24b6089d68ebda70f1d1416
+      name: kubernetes.io/vsphere-volume/[RDFT-WorkspacesN] kubevols/chungguangy-thornton-dynamic-pvc-2a0e8aa6-793b-4d24-bf36-39786a942677.vmdk
+    - devicePath: /dev/disk/by-id/wwn-0x6000c291b7d64580b178971539a1d786
+      name: kubernetes.io/vsphere-volume/[RDFT-WorkspacesN] kubevols/chungguangy-thornton-dynamic-pvc-0b256ab4-1354-459a-ba6c-c7fa9d250fcb.vmdk
+    volumesInUse:
+    - kubernetes.io/vsphere-volume/[RDFT-WorkspacesN] kubevols/chungguangy-thornton-dynamic-pvc-0b256ab4-1354-459a-ba6c-c7fa9d250fcb.vmdk
+    - kubernetes.io/vsphere-volume/[RDFT-WorkspacesN] kubevols/chungguangy-thornton-dynamic-pvc-129c8b61-c291-4843-9b59-c1bdcbc88427.vmdk
+    - kubernetes.io/vsphere-volume/[RDFT-WorkspacesN] kubevols/chungguangy-thornton-dynamic-pvc-2a0e8aa6-793b-4d24-bf36-39786a942677.vmdk
+    - kubernetes.io/vsphere-volume/[RDFT-WorkspacesN] kubevols/chungguangy-thornton-dynamic-pvc-623fb833-907a-438d-808a-d13321de8804.vmdk
+    - kubernetes.io/vsphere-volume/[RDFT-WorkspacesN] kubevols/chungguangy-thornton-dynamic-pvc-9dce4cd6-47a7-4cff-84c2-8f04f14929fc.vmdk
+kind: List
+metadata:
+  resourceVersion: ""

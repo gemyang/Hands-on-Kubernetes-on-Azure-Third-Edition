@@ -1,7 +1,11 @@
 {{/* define template called labels  */}}
 {{- define "labels" -}}
-    {{range $label,$value := .metadata.labels}}
+    {{if .metadata.labels}}
+    {{- range $label,$value := .metadata.labels}}
         {{$label}}{{" => "}}{{$value -}}
+    {{end}}
+    {{else}}
+        No labels
     {{end}}
 {{- end -}}
 
@@ -13,12 +17,13 @@
 {{- end -}}
 apiVersion: {{.apiVersion}}{{"\n"}}
 {{ range .items -}}
-    KIND: {{ .kind }}
-    POD: {{ .metadata.name}}
+    {{- if eq .kind "Pod" -}}
+    POD: {{.metadata.name}}
     NODE: {{.spec.nodeName}}
     PHASE: {{.status.phase}}
     VOLUMES: {{template "volumes" .}}
-    LABELS: {{template "labels" .}}{{"\n"}}
-
+    LABELS: {{template "labels" .}}
+    {{- "\n"}}
+    {{- end -}}
 {{- end -}}
 Number of pods: {{ len .items  }} {{"\n"}}

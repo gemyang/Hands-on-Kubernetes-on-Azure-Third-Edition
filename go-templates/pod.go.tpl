@@ -6,7 +6,7 @@ apiVersion: {{.apiVersion}}{{"\n"}}
         PHASE: {{.status.phase}}
         {{- "\n"}}
     {{ else }} 
-        {{.kind}}
+        else {{.kind}}
     {{- end -}}
 {{- end -}}
 Number of pods: {{ len .items  }} {{"\n"}}
