@@ -54,4 +54,9 @@ n"}{end}{end}{"\n"}{end}' | grep adapter -A 10
 ```
 
 # Troubleshooting:
-When there is an extra {{ end }} phrase or a missing brace, kubectl throws the "error: error parsing template" followed by file content error. It does not give you the extra information on what is wrong
+When there are any syntax error, e.g. an extra {{ end }} phrase, or a missing brace, kubectl throws the "error: error parsing template" followed by file content dump. It does not give you the extra information on which line the error is, you have to find it with your eyes.
+
+```
+// get pod that started for hours
+kubectl get pods | awk '$5 ~/h/'
+```
