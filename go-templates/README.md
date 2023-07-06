@@ -47,3 +47,6 @@ kubectl get pods -o json | jq -r '.items[] | select(.status.phase | test("Runnin
 kubectl get pods -o json | jq -r '.items[] | select(.status.phase | test("Running") | not).metadata.name'
 
 ```
+
+# Troubleshooting:
+When there is an extra {{ end }} phrase or a missing brace, kubectl throws the "error: error parsing template" followed by file content error. It does not give you the extra information on what is wrong
