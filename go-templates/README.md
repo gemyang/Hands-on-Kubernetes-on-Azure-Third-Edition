@@ -44,7 +44,12 @@ kubectl get pods -o=jsonpath='{range .items[*]}{.metadata.name}{"\t"}{.status.ph
 
 kubectl get pods -o json | jq -r '.items[] | select(.status.phase | test("Running")).metadata.name'
 
+// notice "not" to negate the match condition
 kubectl get pods -o json | jq -r '.items[] | select(.status.phase | test("Running") | not).metadata.name'
+
+// print out volume mounts per container
+kubectl get pods -o=jsonpath='{range .items[*]}{.metadata.name}{"\n"}{range .spec.containers[*]}{"\tcontainer: "}{.name}{"\n"}{range .volumeMounts[*]}{"\t\t"}{.name} {": "} {.mountPath}{"\
+n"}{end}{end}{"\n"}{end}' | grep adapter -A 10
 
 ```
 
